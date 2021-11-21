@@ -1,0 +1,312 @@
+/* Globais ========================================*/
+      :root {
+        --dark-blue: #363f5f;
+        --green: #49aa26;
+        --light-green: #3dd705;
+        --red: #e92929;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f0f2f5;
+        font-family: 'Poppins', sans-serif;
+      }
+      h2 {
+        font-weight: normal;
+        color: var(--dark-blue);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      /* Links & buttons*/
+
+      .button.cancel {
+        text-decoration: none;
+        border: 2px var(--red) solid;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--red);
+
+        border-radius: .25rem;
+
+        transition: opacity 0.5s;
+      }
+      .button.cancel:hover {
+        opacity: 0.6;
+      }
+
+      button {
+        height: 50px;
+        width: 100%;
+        color: white;
+        background: rgb(54, 118, 192);
+        border: none;
+        border-radius: .25rem;
+        cursor: pointer;
+        transition: background .5s;
+      }
+
+      button:hover {
+        background: rgba(0, 140, 255, 0.836);
+      }
+
+      header {
+        background: rgb(54, 118, 192);
+        padding: 4rem 0 4rem;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .container {
+        width: min(90vw, 800px);
+        margin: auto;
+      }
+      #table-section {
+        display: inline-block;
+        width: 100%;
+        overflow: auto;
+        margin-top: 6rem;
+      }
+      #data-table {
+        width: 100%;
+        color: #969cb3;
+        border-spacing: 0 0.5rem;
+      }
+      #data-table caption {
+        color: var(--dark-blue);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      #data-table thead tr th:first-child,
+      #data-table tbody tr td:first-child,
+      #data-table tfoot tr td:first-child {
+        border-radius: 1rem 0 0 0.5rem;
+      }
+
+       tr th {
+        background: white;
+        font-weight: normal;
+        opacity: 0.9;
+        padding: 0.5rem 1rem;
+        text-align: left;
+      }
+
+      tr td {
+        background: white;
+        padding: 0.5rem 1rem;
+        color: var(--dark-blue);
+      }
+      tbody tr {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+      tbody tr:hover {
+        opacity: 1;
+      }
+
+      tfoot tr td {
+        background: white;
+        padding: 0.5rem 1rem;
+        opacity: 0.9;
+        font-weight: bold;
+      }
+      .cadastro {
+        margin-top: 0.5rem;
+        text-align: right;
+      }
+      .cadastro a {
+        text-decoration: none;
+        color: rgba(0, 4, 255, 0.836);
+        transition: color 0.5s;
+      }
+      .cadastro a:hover {
+        color: rgba(0, 140, 255, 0.836);
+      }
+      footer {
+        text-align: center;
+        padding: 3rem 0 3rem;
+        margin-top: 6rem;
+      }
+
+      footer p {
+        color: #363f5f;
+        opacity: 0.9;
+      }
+
+      /* Modal ==========================================>*/
+
+      .modal-overlay {
+        width: 100%;
+        height: 100%;
+
+        position: fixed;
+        top: 0;
+        z-index: 999;
+
+        background: rgba(0, 0, 0, 0.7);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal {
+        background: #f0f2f5;
+        padding: 2.4rem;
+
+        position: relative;
+        z-index: 1;
+      }
+
+      /* FORM ==============================>*/
+      #form {
+        max-width: 500px;
+      }
+
+      #form h2 {
+        margin-top: 0;
+      }
+      input {
+        border: none;
+        border-radius: 0.5rem;
+
+        padding: 0.8rem;
+        width: 100%;
+      }
+
+      .input-group {
+        margin-top: 0.8rem;
+      }
+
+      .input-group.actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .input-group.actions .button,
+      .input-group.actions button {
+        width: 48%;
+      }
+
+      .bigger {
+        color: var(--light-green);
+        opacity: 1;
+      }
+
+      /* Modal com opções (Apagar ou Editar) ===============================================**/
+      .modal-opcao {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+
+        position: fixed;
+        top: 0;
+        z-index: 999;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .modal-opcao.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal2 {
+        background: #f0f2f5;
+        border-radius: .3rem;
+
+        position: relative;
+        z-index: 1;
+      }
+      .modal-items {
+        padding: 2.4rem;
+      }
+      .modal2 p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: .2rem;
+      }
+      .modal2 p img {
+        cursor: pointer;
+      }
+      .modal2 h2 {
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .modal-buttons a {
+        text-decoration: none;
+        color: white;
+        border-radius: .3rem;
+
+        width: 6rem;
+        height: 50px;
+        padding: 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-buttons a:first-child {
+        background: var(--red);
+        opacity: 0.9;
+        transition: opacity 0.5s;
+      }
+
+      .modal-buttons a:first-child:hover {
+        opacity: 0.6;
+      }
+
+      .modal-buttons a:last-child {
+        background: rgb(54, 118, 192);
+        opacity: 0.9;
+        transition: opacity 0.5s;
+      }
+
+      .modal-buttons a:last-child:hover {
+        opacity: 0.6;
+      }
+
+      

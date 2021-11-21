@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style></style>
+  </head>
+  <body>
+    <header>Treino de tabela</header>
+
+    <main class="container">
+      <section id="table-section">
+        <table id="data-table">
+          <caption>
+            Tabela de Salário por Profissão
+          </caption>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Profissão</th>
+              <th>Salário</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td>Total idade:</td>
+              <td id="DisplayAges">0</td>
+              <td>Salário total:</td>
+              <td id="DisplaySalarys">R$ 0,00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <div class="cadastro">
+        <a href="#" onclick="Modal.open()">Cadastrar nova pessoa</a>
+      </div>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+          <h2>Cadastrar nova pessoa</h2>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="name">Nome</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Digite seu nome"
+              />
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="age">Idade</label>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                placeholder="Qual sua idade?"
+              />
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="profession">Profissão</label>
+              <input
+                type="text"
+                name="profession"
+                id="profession"
+                placeholder="Qual sua profissão?"
+              />
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="salary">Salário</label>
+              <input
+                type="number"
+                name="salary"
+                id="salary"
+                placeholder="Qual seu salário?" step="0.1"
+              />
+            </div>
+            <div class="input-group actions">
+              <a href="#" class="button cancel" onclick="Modal.close()"
+                >Cancelar</a
+              >
+              <button>Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; Leander | 2021</p>
+    </footer>
+
+    <div class="modal-opcao">
+      <div class="modal2">
+        <p>
+          <img
+            onclick="Modal.closeModal2()"
+            src="../dev-finance/assets/minus.svg"
+            alt=""
+          />
+        </p>
+        <div class="modal-items">
+          <h2>Qual ação deseja realizar?</h2>
+          <div class="modal-buttons">
+            <a href="#" onclick="Data.remove(Modal.index)" id="delete">Apagar</a>
+            <a href="#">Editar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
